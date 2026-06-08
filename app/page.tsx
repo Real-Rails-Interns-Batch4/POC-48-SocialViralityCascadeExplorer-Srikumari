@@ -55,11 +55,10 @@ export default function SocialViralityCascadeExplorer() {
     logEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [logs]);
 
- // 📡 Asynchronous API Engine: Queries Pandas filtration pipelines on FastAPI backend
+  // Asynchronous API Engine: Queries Pandas filtration pipelines on FastAPI backend
   useEffect(() => {
     async function fetchCascadeData() {
       try {
-        // Point this directly to the explicit 127.0.0.1 address shown in your uvicorn terminal
         const response = await fetch(`http://127.0.0.1:8000/api/cascade?time=${currentTime}&scenario=${selectedScenario}`);
         if (response.ok) {
           const data = await response.json();
@@ -448,25 +447,47 @@ export default function SocialViralityCascadeExplorer() {
         {/* ========================================================================= */}
         <section className="w-[31%] bg-[#060a12] p-5 flex flex-col space-y-5 h-full overflow-y-auto border-l border-slate-800/10 shrink-0 justify-between">
           
-          <div className="space-y-4">
+          <div className="space-y-5">
             <div>
               <h3 className="text-[10px] font-mono uppercase tracking-widest text-slate-400 font-bold">Dashboard Breakdown</h3>
-              <h2 className="text-sm font-bold text-slate-200 mt-1">What Is This Data Telling Us?</h2>
+              <h2 className="text-sm font-bold text-slate-200 mt-1">Incident Tactical Intelligence Brief</h2>
             </div>
 
             <hr className="border-slate-800/60" />
 
+            {/* KPI Analytics Cards Panel */}
+            <div className="grid grid-cols-1 gap-2">
+              <div className="bg-slate-900/50 border border-slate-800/80 rounded p-2.5 font-mono">
+                <div className="text-[9px] uppercase tracking-wider text-slate-500 font-bold">Total Aggregate Views</div>
+                <div className="text-lg font-bold text-white mt-0.5 tracking-tight">{scoreboardMetadata.totalViews}</div>
+              </div>
+              <div className="grid grid-cols-2 gap-2">
+                <div className="bg-slate-900/50 border border-slate-800/80 rounded p-2.5 font-mono">
+                  <div className="text-[9px] uppercase tracking-wider text-slate-500 font-bold">Peak Velocity</div>
+                  <div className="text-xs font-bold text-slate-200 mt-1 truncate">{scoreboardMetadata.highestShares}</div>
+                </div>
+                <div className="bg-slate-900/50 border border-slate-800/80 rounded p-2.5 font-mono">
+                  <div className="text-[9px] uppercase tracking-wider text-slate-500 font-bold">Primary Rail Share</div>
+                  <div className="text-xs font-bold text-slate-200 mt-1 truncate">{scoreboardMetadata.mainApp.split(" ")[0]}</div>
+                </div>
+              </div>
+              <div className="bg-slate-900/30 border border-slate-950 rounded px-2.5 py-1 text-[10px] font-mono text-slate-500 flex justify-between">
+                <span>Attention Density:</span>
+                <span className="text-slate-400 font-medium">{scoreboardMetadata.mainApp.substring(scoreboardMetadata.mainApp.indexOf("("))}</span>
+              </div>
+            </div>
+
             {/* Insight Segment 1 */}
             <div className="space-y-1.5">
               <h4 className="text-xs font-semibold text-slate-300 uppercase font-mono flex items-center gap-1.5">
-                <BarChart3 size={12} className="text-slate-200" /> 1. How Things Go Viral
+                <BarChart3 size={12} className="text-slate-200" /> 1. Why This Matters
               </h4>
-              <div className="bg-slate-900/60 border border-slate-800/80 rounded p-3 text-xs text-slate-400 leading-relaxed space-y-1.5">
+              <div className="bg-slate-900/40 border border-slate-800/60 rounded p-3 text-xs text-slate-400 leading-relaxed space-y-2">
                 <p>
-                  Posts don't spread evenly from friend to friend. Instead, they explode when a single major account with thousands of followers shares them. 
+                  Algorithmic amplification from a single tier-1 platform account determines whether content reaches mass distribution or decays within the originating network.
                 </p>
                 <p className="text-slate-200 font-medium text-[11px]">
-                  Without big influencers, most rumors and posts would die out quickly and never reach a massive audience.
+                  Absent high-density node acceleration, localized information anomalies consistently fail to breach cross-platform velocity thresholds.
                 </p>
               </div>
             </div>
@@ -474,33 +495,12 @@ export default function SocialViralityCascadeExplorer() {
             {/* Insight Segment 2 */}
             <div className="space-y-1.5">
               <h4 className="text-xs font-semibold text-slate-300 uppercase font-mono flex items-center gap-1.5">
-                <ShieldAlert size={12} className="text-slate-200" /> 2. Who is Spreading It?
+                <ShieldAlert size={12} className="text-slate-200" /> 2. Who Controls the Rail
               </h4>
-              <div className="bg-slate-900/60 border border-slate-800/80 rounded p-3 text-xs text-slate-400 leading-relaxed">
+              <div className="bg-slate-900/40 border border-slate-800/60 rounded p-3 text-xs text-slate-400 leading-relaxed">
                 <p>
-                  The speed of a viral post depends entirely on app algorithms (like TikTok, X, or Instagram). These platforms decide exactly whose feed your post pops up in based on how much drama or excitement it creates.
+                  Propagation velocity depends strictly on proprietary algorithmic ingestion models. These platform routing engines prioritize engagement based on thematic volatility and interactive friction coefficients to maximize terminal user attention share.
                 </p>
-              </div>
-            </div>
-
-            {/* Insight Segment 3 */}
-            <div className="space-y-1.5">
-              <h4 className="text-xs font-semibold text-slate-300 uppercase font-mono flex items-center gap-1.5">
-                <Layers size={12} className="text-slate-200" /> 3. Internet Scoreboard
-              </h4>
-              <div className="bg-slate-900/40 border border-slate-800/60 rounded p-2.5 text-xs space-y-2 font-mono">
-                <div className="flex justify-between border-b border-slate-900/60 pb-1">
-                  <span className="text-slate-500">Total Views:</span>
-                  <span className="text-slate-200 font-bold">{scoreboardMetadata.totalViews}</span>
-                </div>
-                <div className="flex justify-between border-b border-slate-900/60 pb-1">
-                  <span className="text-slate-500">Highest Shares / Min:</span>
-                  <span className="text-slate-100 font-bold">{scoreboardMetadata.highestShares}</span>
-                </div>
-                <div className="flex justify-between text-[11px]">
-                  <span className="text-slate-500">Main Social App:</span>
-                  <span className="text-white font-bold">{scoreboardMetadata.mainApp}</span>
-                </div>
               </div>
             </div>
           </div>
