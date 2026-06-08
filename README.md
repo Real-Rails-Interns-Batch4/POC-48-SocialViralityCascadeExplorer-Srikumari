@@ -17,6 +17,7 @@ This system serves as an **Interactive Forensics Dashboard** prototype for data 
 * **Interactive Timeline Slider:** Move the scrubber to watch how a specific post spreads network-wide minute-by-minute from `T+0` to `T+60`.
 * **Dynamic Content Scoreboard:** Tracks total views, active nodes, and sharing speed in real-time, completely synchronized with the active scenario data specs.
 * **Custom Social App Nodes:** Built on top of a 2D canvas matching real app styles (X, TikTok, LinkedIn, Reddit) so you can visually isolate where the data is traveling.
+* **Top-Level KPI Analytics Grid:** High-visibility structured cards at the top of the sidebar that dynamically capture and display critical tracking metrics (Total Aggregate Views, Peak Velocity, and Primary Rail Share).
 * **Live System Terminal Ticker:** A scrolling log monitor printing real-time alerts as events unfold, featuring high-contrast amber text for critical milestones.
 * **One-Click Data Export:** Instantly download the active cascade event dataset to your machine as a clean data file (`.json`).
 
