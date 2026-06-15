@@ -34,10 +34,11 @@ This audit evaluates the system's interface consistency, data storytelling effec
   1. *Topology Inspection:* The central canvas renders the structural path of the tracking vectors.
   2. *Live Infrastructure Logging:* The system terminal component streams instant, chronological code alerts parsed live through Pandas data frames.
   3. *High-Visibility KPI Analytics Grid:* Structured cards embedded directly at the top of the information sidebar that dynamically capture and partition critical tracking metrics (Total Aggregate Views, Peak Velocity, Primary Rail Share) based on the active scenario payload.
-  4. *Strategic Intelligence Briefing:* The right-hand sidebar translates raw data pathways into high-tier analytical segments:
+  4. *Downstream Analytics Stack:* Houses the **Node Propagation Spread Timeline** (using the specified `#647d8b` slate color) and the **Ingestion Decay Half-Life Curves** graphics. Both charts feature explicit, independent vertical Y-axis labels (`CHANNELS` and `VELOCITY %`) and clear horizontal X-axis benchmarks.
+  5. *Strategic Intelligence Briefing:* The right-hand sidebar translates raw data pathways into high-tier analytical segments:
      * *Why This Matters:* Documents the impact of algorithmic amplification from a single tier-1 platform account on mass content distribution thresholds.
      * *Who Controls the Rail:* Analyzes proprietary platform routing engines and interactive friction coefficients that drive distribution velocities.
-* **Strict Single-Screen Constraints (`100vh` Max):** Configured the layout grid on a rigid `w-screen h-screen overflow-hidden` structure, allocating exactly **70% layout width** to the map stage/terminal and **30% layout width** to the briefing sidebars. This creates an absolute, zero-scroll single-page application context that ensures the live activity ticker log is always visible.
+* **Scroll-Optimized Layout Constraints:** Configured the layout grid on a rigid `w-screen h-screen overflow-hidden` structure, allocating **70% layout width** to the left interface stage and **30% layout width** to the briefing sidebars. The layout keeps the network canvas, timeline control deck, and terminal log perfectly locked onto a single screen view to eliminate parent layout jumping/jitter when clicking **Play**. Advanced engineering graphs are cleanly tucked right beneath the terminal log, accessible via a natural vertical scroll.
 
 ---
 
