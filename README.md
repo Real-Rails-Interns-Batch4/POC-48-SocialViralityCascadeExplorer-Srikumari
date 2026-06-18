@@ -18,6 +18,10 @@ This system serves as an **Interactive Forensics Dashboard** prototype for data 
 * **Dynamic Content Scoreboard:** Tracks total views, active nodes, and sharing speed in real-time, completely synchronized with the active scenario data specs.
 * **Custom Social App Nodes:** Built on top of a 2D canvas matching real app styles (X, TikTok, LinkedIn, Reddit) so you can visually isolate where the data is traveling.
 * **Top-Level KPI Analytics Grid:** High-visibility structured cards at the top of the sidebar that dynamically capture and display critical tracking metrics (Total Aggregate Views, Peak Velocity, and Primary Rail Share).
+* **Node Propagation Spread Timeline:** A high-visibility bar chart explicitly color-matched with your slate design signature (`#647d8b`). Formatted with a clean, vertical **CHANNELS** Y-axis indicator and an X-axis tracking discovery benchmarks.
+* **Ingestion Decay Half-Life Curves:** An analytical vector line graph visualizing the mathematical exponential decay trajectories calculated by the Pandas engine. Features explicit path mappings for Scenario A vs. Scenario B alongside an explicit vertical **VELOCITY %** Y-axis metric.
+* **Live System Terminal Ticker Log:** An anchored, screen-stabilized scrolling log monitor printing real-time structural routing modifications as timeline milestones execute.
+* **One-Click Data Export:** Instantly download the active cascade event dataset to your machine as a clean data file (`.json`).
 * **Live System Terminal Ticker:** A scrolling log monitor printing real-time alerts as events unfold, featuring high-contrast amber text for critical milestones.
 * **One-Click Data Export:** Instantly download the active cascade event dataset to your machine as a clean data file (`.json`).
 
