@@ -136,7 +136,8 @@ export default function SocialViralityCascadeExplorer() {
         data: { 
           label: (
             <div className="flex flex-col items-center justify-center p-2 text-center relative group">
-              <div className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 hidden group-hover:flex flex-col w-56 p-2 bg-[#030712]/95 backdrop-blur-md border border-cyan-500/40 rounded shadow-2xl z-50 text-left text-[10px] font-mono text-slate-300 pointer-events-none">
+              {/* 🎨 SURFACE COLOR #0B1117 MAPPED TO TOOLTIPS */}
+              <div className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 hidden group-hover:flex flex-col w-56 p-2 bg-[#0B1117]/95 backdrop-blur-md border border-cyan-500/40 rounded shadow-2xl z-50 text-left text-[10px] font-mono text-slate-300 pointer-events-none">
                 <div className="text-cyan-400 font-bold border-b border-slate-800 pb-1 mb-1">{node.user}</div>
                 <p className="italic text-slate-400">"{node.content}"</p>
                 <div className="pt-1 mt-1 border-t border-slate-800 flex justify-between text-[9px] text-cyan-400 font-bold">
@@ -165,7 +166,7 @@ export default function SocialViralityCascadeExplorer() {
     const edges: Edge[] = [];
     visibleRawNodes.forEach((node) => {
       if (node.parentId && visibleRawNodes.some(n => n.id === node.parentId)) {
-        let edgeColor = "#22d3ee"; // 🎨 FIX: Injected Cyan default edge tracking lines
+        let edgeColor = "#22d3ee"; 
         if (node.platform === "TikTok") edgeColor = "#ec4899";
         if (node.platform === "Reddit") edgeColor = "#f97316";
         edges.push({
@@ -188,18 +189,16 @@ export default function SocialViralityCascadeExplorer() {
   };
 
   return (
-    // 🎨 FIX: Master page backdrop color completely mapped to exact hex #030712
+    // 🎨 MASTER BACKGROUND COLOR COMPONENT LAYOUT: #030712
     <div suppressHydrationWarning className="h-screen w-screen bg-[#030712] text-slate-100 font-sans overflow-hidden flex flex-col">
-      {/* Top Header Bar Row */}
+      {/* Top Header Bar Row: #030712 */}
       <header className="border-b border-slate-800/60 bg-[#030712]/80 backdrop-blur-md px-6 py-3.5 flex items-center justify-between z-50 shrink-0">
         <div className="flex items-center space-x-3">
-          {/* 🎨 FIX: Added Cyan header marker signal pulse */}
           <div className="h-2.5 w-2.5 bg-cyan-400 rounded-full animate-pulse shadow-[0_0_10px_#22d3ee]" />
           <h1 className="text-sm font-bold tracking-wider uppercase text-slate-200">
             Real Rails Intelligence Library <span className="text-slate-500 font-normal">|</span> <span className="text-white font-medium">Social Virality Cascade Explorer</span>
           </h1>
         </div>
-        {/* 🎨 FIX: Cyan accenting added to header infrastructure pill badge */}
         <span className="text-xs font-mono uppercase bg-cyan-950/30 text-cyan-400 border border-cyan-800/40 px-2.5 py-1 rounded flex items-center gap-1.5">
           <Radio size={11} className="text-cyan-400 animate-pulse" /> GDELT Stream Rail
         </span>
@@ -234,13 +233,13 @@ export default function SocialViralityCascadeExplorer() {
             </div>
           </div>
 
-          {/* 🖥️ PRIMARY NETWORK TOPOLOGY CANVAS */}
-          <div className="relative h-[380px] bg-[#030712] rounded-lg border border-slate-800/80 overflow-hidden w-full shrink-0 shadow-inner">
+          {/* 🖥️ PRIMARY SURFACE PANEL CANVAS BINDINGS: #0B1117 */}
+          <div className="relative h-[380px] bg-[#0B1117] rounded-lg border border-slate-800/80 overflow-hidden w-full shrink-0 shadow-inner">
             <ReactFlow nodes={flowNodes} edges={flowEdges} fitView><Background color="#0f172a" gap={20} size={1} /></ReactFlow>
           </div>
 
-          {/* Timeline Playback Slider Controls Container */}
-          <div className="bg-[#030712]/60 backdrop-blur-md border border-slate-800/80 rounded-lg p-3 space-y-2 shrink-0 w-full flex flex-col shadow-md">
+          {/* Timeline Playback Slider Controls Container: #0B1117 */}
+          <div className="bg-[#0B1117]/60 backdrop-blur-md border border-slate-800/80 rounded-lg p-3 space-y-2 shrink-0 w-full flex flex-col shadow-md">
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-2">
                 <button suppressHydrationWarning onClick={() => setIsPlaying(!isPlaying)} className="p-1.5 rounded flex items-center justify-center bg-indigo-600 text-white font-bold hover:bg-indigo-500 transition-colors">{isPlaying ? <Pause size={14} /> : <Play size={14} className="ml-0.5" />}</button>
@@ -248,7 +247,6 @@ export default function SocialViralityCascadeExplorer() {
                 <span className="text-xs font-mono text-slate-400">Timeline Offset: <strong className="text-white">T + {currentTime} minutes</strong></span>
               </div>
               <div className="flex items-center space-x-3 text-[10px] font-mono text-slate-400 bg-black/40 border border-slate-800/40 px-2.5 py-1 rounded">
-                {/* 🎨 FIX: Highlighted active telemetry metrics counters in Cyan */}
                 <div>Nodes: <span className="text-cyan-400 font-bold">{currentMetrics.activeNodes}</span></div>
                 <div>Accumulated Reach: <span className="text-cyan-400 font-bold">{currentMetrics.accumulatedReach.toLocaleString()}</span></div>
                 <div>Velocity: <span className="text-slate-300 font-bold">{currentMetrics.velocity}</span></div>
@@ -273,12 +271,12 @@ export default function SocialViralityCascadeExplorer() {
           </div>
 
           {/* ========================================================================= */}
-          {/* 📊 LOWER CHARTS DECK PANEL                                               */}
+          {/* 📊 LOWER CHARTS DECK SURFACE LAYER: #0B1117                               */}
           {/* ========================================================================= */}
           <div className="w-full flex flex-col space-y-4 pt-4 border-t border-slate-900 shrink-0">
             <div className="space-y-1.5 w-full">
               <h4 className="text-[11px] font-semibold text-slate-300 uppercase font-mono flex items-center gap-1.5"><LineChart size={12} className="text-cyan-400" /> Node Propagation Spread Timeline</h4>
-              <div className="bg-slate-950/40 border border-slate-800/80 rounded-lg p-4 pl-10 h-56 flex flex-col justify-between shadow-inner relative">
+              <div className="bg-[#0B1117] border border-slate-800/80 rounded-lg p-4 pl-10 h-56 flex flex-col justify-between shadow-inner relative">
                 <div className="absolute left-1.5 top-1/2 -translate-y-1/2 -rotate-90 origin-center text-[8px] font-mono font-bold tracking-widest text-slate-500 whitespace-nowrap pointer-events-none">CHANNELS</div>
                 <div className="flex-1 flex items-end justify-between space-x-4 pt-1 border-b border-slate-800/60 pb-1 relative">
                   {[
@@ -287,7 +285,6 @@ export default function SocialViralityCascadeExplorer() {
                     { t: "T+45m", h: "h-[85%]", n: "6" }, { t: "T+60m", h: "h-[100%]", n: "7" }
                   ].map((col, i) => (
                     <div key={i} className="flex-1 flex flex-col items-center justify-end h-full group relative">
-                      {/* 🎨 FIX: Applied Cyan highlights to charts markers data metrics values */}
                       <span className="text-[9px] text-cyan-400 font-mono font-bold scale-[0.85] mb-1">{col.n}</span>
                       <div className={`w-full ${col.h} bg-cyan-500/60 border border-cyan-400/20 rounded-t-sm transition-all group-hover:bg-cyan-400`} />
                       <span className="text-[9px] text-slate-500 font-mono mt-2 scale-[0.8]">{col.t}</span>
@@ -300,12 +297,11 @@ export default function SocialViralityCascadeExplorer() {
 
             <div className="space-y-1.5 w-full">
               <h4 className="text-[11px] font-semibold text-slate-300 uppercase font-mono flex items-center gap-1.5"><TrendingDown size={12} className="text-cyan-400" /> Ingestion Decay Half-Life Curves</h4>
-              <div className="bg-slate-950/40 border border-slate-800/80 rounded-lg p-4 pl-10 h-56 flex flex-col justify-between relative overflow-hidden shadow-inner">
+              <div className="bg-[#0B1117] border border-slate-800/80 rounded-lg p-4 pl-10 h-56 flex flex-col justify-between relative overflow-hidden shadow-inner">
                 <div className="absolute left-1.5 top-1/2 -translate-y-1/2 -rotate-90 origin-center text-[8px] font-mono font-bold tracking-widest text-slate-500 whitespace-nowrap pointer-events-none">VELOCITY %</div>
                 <div className="flex-1 flex items-end justify-between pt-1 border-b border-slate-800/60 pb-1 relative z-10">
                   <svg className="absolute inset-0 w-full h-full p-2" viewBox="0 0 100 100" preserveAspectRatio="none">
                     <path d="M 0 10 Q 30 75 100 95" fill="none" stroke="#ec4899" strokeWidth="2" strokeDasharray="3,1" />
-                    {/* 🎨 FIX: Transformed chart path rendering curves to clean high-contrast Cyan */}
                     <path d="M 0 25 Q 40 85 100 98" fill="none" stroke="#22d3ee" strokeWidth="1.5" />
                   </svg>
                   <div className="absolute left-3 top-3 text-[9px] text-pink-400/80 font-mono font-medium">Scenario A (High Ingestion Decay)</div>
@@ -319,12 +315,11 @@ export default function SocialViralityCascadeExplorer() {
         </section>
 
         {/* ========================================================================= */}
-        {/* RIGHT SECTION: EXACT 30% SPLIT SIDEBAR BRIEF OVERVIEW STAGE              */}
+        {/* RIGHT SECTION: EXACT 30% SPLIT SIDEBAR SURFACE INTERFACE PANEL: #0B1117  */}
         {/* ========================================================================= */}
-        <section className="w-[30%] bg-[#030712]/70 backdrop-blur-md p-5 flex flex-col space-y-5 h-full overflow-y-auto border-l border-slate-800/40 justify-between shrink-0">
+        <section className="w-[30%] bg-[#0B1117] p-5 flex flex-col space-y-5 h-full overflow-y-auto border-l border-slate-800/40 justify-between shrink-0">
           <div className="space-y-5">
             <div>
-              {/* 🎨 FIX: Turned sidebar section headers text labels to crisp Cyan accent styling */}
               <h3 className="text-[10px] font-mono uppercase tracking-widest text-cyan-400 font-bold">Dashboard Breakdown</h3>
               <h2 className="text-sm font-bold text-slate-200 mt-1">Incident Tactical Intelligence Brief</h2>
             </div>
@@ -335,7 +330,6 @@ export default function SocialViralityCascadeExplorer() {
             <div className="grid grid-cols-1 gap-2">
               <div className="bg-slate-900/50 border border-slate-800/80 rounded p-2.5 font-mono">
                 <div className="text-[9px] uppercase tracking-wider text-slate-500 font-bold">Total Aggregate Views</div>
-                {/* 🎨 FIX: Target views count highlight color mapped explicitly to text-cyan-400 */}
                 <div className="text-lg font-bold text-cyan-400 mt-0.5 tracking-tight">{scoreboardMetadata.totalViews}</div>
               </div>
               <div className="grid grid-cols-2 gap-2">
@@ -384,7 +378,6 @@ export default function SocialViralityCascadeExplorer() {
 
           {/* Export action button */}
           <div className="pt-2 shrink-0">
-            {/* 🎨 FIX: Export download data execution tracker button updated to absolute Cyan border/text details layout */}
             <button onClick={downloadSampleData} className="w-full py-2 bg-slate-900 border border-slate-800 hover:border-cyan-400/40 hover:bg-slate-800 rounded text-xs font-mono font-medium text-slate-300 flex items-center justify-center space-x-2 transition-all active:scale-[0.99]">
               <Download size={12} className="text-cyan-400" />
               <span>Download Sample Data</span>
